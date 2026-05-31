@@ -1,0 +1,42 @@
+/* HEADER
+   ========================================================================== */
+
+.hero-cover {
+  background: url('/img/hero-chairs-sea-b.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.header-title {
+  padding: 1.5%;
+  font-style: italic;
+  color: #004282;
+  margin: 0 auto;
+  font-size: 69px;
+  line-height: 100px;
+  white-space: nowrap;
+
+
+}
+
+.ajlink-icon {
+  width: 0.8em;
+  margin-right: -0.1em;
+}
+
+/* MAIN ARTICLE
+   ========================================================================== */
+
+.main {
+
+  background-image: #004282;
+  /*  background-color: linear-gradient( #004282, red );*/
+  height: auto;
+}
+
+.button-article {
+
+  margin-bottom: 4em;
+}

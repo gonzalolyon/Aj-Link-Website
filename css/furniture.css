@@ -1,0 +1,94 @@
+/* LAYOUT ELEMENTS
+   ========================================================================== */
+
+body {
+  background-color: #004282;
+  border: none;
+  max-width: none;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+  color: white;
+
+}
+
+body.main-grid {
+  display: grid;
+  grid-template-areas: 'header' 'menu-1' 'main' 'aside' 'footer';
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  grid-row-gap: 30px;
+  grid-column-gap: 20px;
+  background-color: #004282;
+}
+
+.container {
+  padding: 10px 10px;
+  overflow: hidden;
+  color: white;
+
+}
+
+
+
+/* MENU SIDE
+   ========================================================================== */
+
+.container.menu-1 {
+  /*      background-color: rgba(31, 31, 31, 0.33);*/
+  grid-area: menu-1;
+}
+
+
+
+/* MAIN AREA
+   ========================================================================== */
+
+.container.main {
+  grid-area: main;
+  /*          background-color: rgba(31, 31, 31, 0.33);*/
+}
+
+.icon-gear {
+  color: red;
+}
+
+/* ASIDE AREA
+   ========================================================================== */
+
+.container.aside-2 {
+  grid-area: aside;
+}
+
+
+
+/* HEADER AREA
+   ========================================================================== */
+
+.container.header {
+  background-color: #f4f9ff;
+  grid-area: header;
+  position: relative;
+  background-image: url('/img/furniture_supplies-cover-2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  height: 50rem;
+}
+
+.ajlink-icon {
+
+  padding-right: 0.10em;
+}
+
+/* FOOTER AREA
+   ========================================================================== */
+
+.container.footer {
+  background-color: #333333;
+  grid-area: footer;
+}
+
+
+/* MEDIA QUERIES
+   ========================================================================== */

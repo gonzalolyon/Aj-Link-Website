@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteCond %{HTTP:Accept-Language} (es) [NC]
+RewriteRule .* http://www.ajlink.com/home-espanol.html [R,L]
+RewriteEngine On
+RewriteCond %{HTTP_HOST}  !^www\.ajlink\.com$ [NC]
+RewriteRule ^(.*) http://www.ajlink.com/$1 [L,R]
+ErrorDocument 404 /404-not-found.html

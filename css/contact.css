@@ -1,0 +1,269 @@
+.hero-cover {
+  background: url('/img/contact-cover.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.main {
+  background-color: #004282;
+}
+
+.ajlink-icon {
+  margin-right: 0;
+}
+
+
+/*----------------- Contact Form ---------------------*/
+
+.h3-form {
+  font-size: 1.8em;
+  /*  padding-top: 1.7em;*/
+}
+
+.container-form {
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #004282;
+  position: relative;
+  /*  color: #808080;*/
+  /*  background-image: url(/img/Hero-Image-Ajlink2.jpg)*/
+}
+
+.form-contact {
+  padding: 0 2em;
+  margin: 0 auto;
+  max-width: 550px;
+  text-align: left;
+}
+
+.h3-form {
+  text-align: center;
+}
+
+.form-contact label {
+  font-size: 0.85em;
+  color: azure;
+  padding: .8em;
+}
+
+
+#message {
+  height: 200px;
+}
+
+input[name="name"],
+input[name="email"],
+input[name="human"],
+.contact-email,
+select,
+#message {
+  color: black;
+  opacity: 0.4;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 1px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background-color: #c1c1c1;
+}
+
+.imput2-submit {
+  background-color: #EE2A2B;
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  /*  fix this margin with class*/
+  margin: 0 auto 2em auto;
+}
+
+.imput2-submit:hover {
+  background-color: #ff4c4c;
+}
+
+/*----------------- ASIDE ---------------------*/
+
+/*----------------- Table Contacts---------------------*/
+
+.item3 {
+  background-color: #ddd;
+  background-color: #e3e3e3;
+  color: #676767;
+}
+
+.container-contacts {
+  max-height: 600px;
+  overflow-y: scroll;
+}
+
+table {
+  /*          border: 0.5px solid #ccc;*/
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 1200px;
+  table-layout: fixed;
+  line-height: 2em;
+}
+
+
+table caption {
+  font-size: 1.8em;
+  /*  border-bottom: 1px solid #626262;*/
+  font-weight: 400;
+  /*  text-transform: uppercase;*/
+  /*  background-color: #333333;*/
+  margin: 0 auto;
+  padding: 1.2em;
+
+}
+
+table th,
+table td {
+  padding: 2em 1em;
+  text-align: left;
+  border-top: solid 2.5px #c1c1c1;
+  /*  background-color: grey;*/
+}
+
+table th {
+  /*  font-size: .85em;*/
+  /*  letter-spacing: .1em;*/
+  /*        text-transform: uppercase;*/
+  /*  background-color: #333333;*/
+  line-height: 1.9em;
+  /*    padding: 1.5em;*/
+  text-align: left;
+}
+
+.th-icon,
+.th-icon2 {
+  width: 0.9em;
+  height: 1em;
+  font-size: 1.8em;
+  padding: 0 0.25em 0 0;
+  vertical-align: bottom;
+  text-align: left;
+  line-height: 1.9em;
+}
+
+table tr:nth-child(odd) {
+  /*    background-color: #c1c1c1;*/
+  /*  border: 1px solid #ddd;*/
+  padding: .35em;
+}
+
+table tr:nth-child(even) {
+  /*      background-color: #c1c1c1;*/
+  /*  background-color: #ddd;*/
+  /*  border: 1px solid #ddd;*/
+  padding: .35em;
+}
+
+
+
+
+td[data-label="Country"] {
+  /*  color: #004282;*/
+  width: 25%;
+}
+
+td[data-label="Name"] {
+  /*  color: #004282;*/
+  width: 25%;
+}
+
+td[data-label="Address"] {
+  /*  color: #333333;*/
+  width: 35%;
+}
+
+td[data-label="Contact"] {
+  /*  color: #808080;*/
+  width: 45%;
+}
+
+@media screen and (max-width: 730px) {
+  able th,
+  table td {
+    padding: 1em;
+    text-align: left;
+    /*  border: solid 1px #c1c1c1;*/
+    /*  background-color: grey;*/
+    /*  background-color: grey;*/
+  }
+
+  td[data-label="Country"],
+  td[data-label="Address"],
+  td[data-label="Name"],
+  td[data-label="Contact"] {
+    width: auto;
+  }
+
+
+
+
+  table {
+    border: 0;
+    table-layout: fixed;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+
+  .container-contacts {
+    max-height: 250px;
+    overflow-y: scroll;
+  }
+
+
+}

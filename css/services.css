@@ -1,0 +1,279 @@
+/* HEADER
+   ========================================================================== */
+
+.hero-cover {
+  background: url('/img/hero-port-chairs-sea-b.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.header-title {
+  padding: 1.5%;
+  font-style: italic;
+  color: #004282;
+  margin: 0 auto;
+  font-size: 69px;
+  line-height: 100px;
+  white-space: nowrap;
+
+
+}
+
+.ajlink-icon {
+  width: 0.8em;
+  margin-right: 0.01em;
+}
+
+
+
+
+/* MAIN ARTICLE
+   ========================================================================== */
+
+.item2 {
+  /*    height: 8000px;*/
+  background-image: red;
+  /*    background-color: linear-gradient( #004282, red );*/
+  height: auto;
+}
+
+/* Slideshow */
+
+.item3 {
+  /*  height: 2000px;*/
+  /*  background-color: aqua;*/
+  margin-bottom: -1em;
+
+}
+
+.container-slider {
+  height: auto;
+  background: #c9c9c9;
+  /*  margin-bottom: 5em;*/
+  /*  margin-top: 1em;
+  */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.slider {
+  position: relative;
+  height: 450px;
+  text-transform: uppercase;
+  /*    margin-bottom: 4rem;*/
+}
+
+.slide-list {
+  display: flex;
+  flex-direction: column;
+  list-style: upper-alpha;
+  text-transform: none;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+.slider:before {
+  width: 100%;
+  height: 100%;
+  content: 'paused';
+  position: absolute;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  line-height: 40vh;
+  opacity: 0;
+  transition: 0.3s;
+  font-size: 2rem;
+  z-index: 1;
+
+}
+
+.slider.paused:before {
+  opacity: 1;
+
+}
+
+.h3-slider {
+  font-size: 3em;
+}
+
+/*
+
+.slider-icons {
+  width: 5em;
+  fill: currentColor;
+  color: red;
+}
+*/
+
+.slide {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+
+}
+
+.s1 {
+  background-color: #5a5a5a;
+
+}
+
+.s2 {
+  background-color: #333333;
+
+}
+
+.s3 {
+  background-color: #5a5a5a;
+
+}
+
+.s4 {
+  background-color: #333333;
+
+}
+
+.s5 {
+  background-color: #5a5a5a;
+
+}
+
+.slide span {
+  font-size: 4rem;
+
+}
+
+.slide em {
+  /*  color: white;*/
+  padding-right: 0.8rem;
+  font-size: 3rem;
+  font-variant-numeric: lining-nums;
+  /*  font-style: normal;*/
+  /*  font-weight: 700;*/
+}
+
+.menu {
+  text-align: center;
+
+}
+
+.play,
+.pause {
+  padding: .5rem;
+  margin: .6rem .2rem;
+}
+
+
+.container-button {
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  flex-grow: strech;
+  /*    width: 100%;*/
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.button-flex {
+  padding: 0.4em;
+  background-color: #ebebeb;
+  border-radius: 100px;
+}
+
+.button-slider {
+  margin: 0 auto;
+  background-color: #333333;
+  color: #fff9f9;
+  padding: 1.1em 1em;
+  width: 3em;
+  height: 3em;
+  vertical-align: middle;
+  border-radius: 100px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.3em;
+  line-height: 0.2em;
+  font-variant-numeric: lining-nums;
+  font-weight: 700;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button-slider:hover {
+
+  background-color: rgb(175, 175, 175);
+  ;
+  color: #333
+}
+
+.slide,
+.slider span:before {
+  color: white;
+}
+
+.icon-world-thin:before {
+  color: #004282;
+}
+
+
+@media screen and (max-width:668px) {
+
+
+  .container-button {
+    width: 100%;
+    flex-wrap: wrap;
+
+    /*      background-color: #ff00d8;*/
+  }
+
+  .button-flex {
+    padding: 0.6em;
+    /*      background-color: red;*/
+  }
+
+  /*
+  .button-slider {
+    padding: 1.2em;
+    margin: 0;
+    font-size: 1em;
+  }
+*/
+}
+
+
+@media screen and (max-width:408px) {
+
+  .button-flex {
+    padding: 0.02em;
+  }
+
+
+  /* .button-slider {padding: 1.2em; margin: 0; font-size: 1em;} */
+}
+
+@media screen and (max-width:332px) {
+
+  .button-flex {
+    padding: 0.001em;
+  }
+
+  .button-slider {
+
+    font-size: 1em;
+  }
+
+  /* .button-slider {padding: 1.2em; margin: 0; font-size: 1em;} */
+}
