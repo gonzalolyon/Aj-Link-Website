@@ -298,12 +298,10 @@
 
       var map = L.map(el, { scrollWheelZoom: false }).setView([10, -75], 3);
 
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 16,
-        attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ'
-      }).addTo(map);
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 16
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        maxZoom: 19,
+        subdomains: 'abcd',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
       }).addTo(map);
 
       fetch('javascript/aj-link-map-clients.json')
@@ -327,7 +325,7 @@
           }).addTo(map);
 
           try {
-            map.fitBounds(layer.getBounds(), { padding: [30, 30] });
+            map.fitBounds(layer.getBounds(), { padding: [30, 30], maxZoom: 4 });
           } catch (e) { /* keep default view */ }
         })
         .catch(function () { /* leave base map if data fails to load */ });
