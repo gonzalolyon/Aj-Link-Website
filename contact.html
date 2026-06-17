@@ -94,13 +94,12 @@
 
       <div class="contact-container">
         <div class="container-form">
-          <form class="form-contact" action="mail.php" method="post">
+          <form class="form-contact" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
             <h3 class="h3-form">Contact Form</h3>
-            <!--
-            <?php
-    include "mail.php";
-?>
--->
+            <input type="hidden" name="form-name" value="contact">
+            <p hidden>
+              <label>Don't fill this out if you're human: <input name="bot-field"></label>
+            </p>
             <label for="name">Name</label>
             <input type="input" id="name" name="name" placeholder="Your name..">
 
@@ -353,10 +352,7 @@
             <!------------------ Message Field --------------------->
             <label for="message">Subject</label>
             <textarea id="message" name="message" placeholder="Write a message..."></textarea>
-            <!------------------ Anti Spam Question --------------------->
-            <label>What is 2+2? (Anti-spam)</label>
-            <input type="text" name="human" placeholder="Type Here">
-            <input name="submit" class="imput2-submit" id="submit" type="submit" value="Submit Message">
+            <input class="imput2-submit" id="submit" type="submit" value="Submit Message">
           </form>
         </div>
       </div>

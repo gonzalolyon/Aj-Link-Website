@@ -20,6 +20,11 @@
   <link type="text/css" href="/css/home.css" rel="stylesheet">
   <link type="text/css" href="/css/media-query.css" rel="stylesheet">
   <!------------------ SCRIPTS --------------------->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <style>
+    .aj-pin { background: none; border: none; }
+  </style>
 
 </head>
 
@@ -172,7 +177,7 @@
 
       <div class="map-container full-width">
         <h3 class="h3-client">Clients Map</h3>
-        <iframe class="map-clients" src="https://a.tiles.mapbox.com/v4/ajlink.nl5e5amn/attribution,zoompan,geocoder,share.html?"></iframe>
+        <div id="clients-map" class="map-clients"></div>
       </div>
     </div>
     <!------------------ FOOTER --------------------->
@@ -273,6 +278,59 @@
   <script src="javascript/sticky-nav.js"></script>
   <script src="javascript/nav.js"></script>
   <script src="javascript/lan.js"></script>
+  <!------------------ CLIENTS MAP --------------------->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    (function () {
+      var el = document.getElementById('clients-map');
+      if (!el || typeof L === 'undefined') return;
+
+      function pinIcon(color, symbol) {
+        var glyph = symbol === 'star'
+          ? '<path d="M14 8 L15.18 11.38 L18.76 11.45 L15.9 13.62 L16.94 17.05 L14 15 L11.06 17.05 L12.1 13.62 L9.24 11.45 L12.82 11.38 Z" fill="#ffffff"/>'
+          : '<path d="M11 8 L11 20" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/><path d="M11 8 H18 L16 11 L18 14 H11 Z" fill="#ffffff"/>';
+        var svg = '<svg width="28" height="40" viewBox="0 0 28 40" xmlns="http://www.w3.org/2000/svg">'
+          + '<path d="M14 0.5C6.5 0.5 0.5 6.5 0.5 14c0 9.9 13.5 25 13.5 25s13.5-15.1 13.5-25C27.5 6.5 21.5 0.5 14 0.5z" fill="' + color + '" stroke="#ffffff" stroke-width="1.5"/>'
+          + glyph + '</svg>';
+        return L.divIcon({ html: svg, className: 'aj-pin', iconSize: [28, 40], iconAnchor: [14, 40], popupAnchor: [0, -34] });
+      }
+
+      var map = L.map(el, { scrollWheelZoom: false }).setView([10, -75], 3);
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        maxZoom: 19,
+        subdomains: 'abcd',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+      }).addTo(map);
+
+      fetch('javascript/aj-link-map-clients.json')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var layer = L.geoJSON(data, {
+            pointToLayer: function (feature, latlng) {
+              var p = feature.properties || {};
+              return L.marker(latlng, {
+                icon: pinIcon(p['marker-color'] || '#003F82', p['marker-symbol'])
+              });
+            },
+            onEachFeature: function (feature, lyr) {
+              var p = feature.properties || {};
+              var title = (p.title || '').trim();
+              var desc = (p.description || '').trim().replace(/\n/g, '<br>');
+              var html = (title ? '<strong>' + title + '</strong>' : '') +
+                (title && desc ? '<br>' : '') + desc;
+              if (html) lyr.bindPopup(html);
+            }
+          }).addTo(map);
+
+          try {
+            map.fitBounds(layer.getBounds(), { padding: [30, 30], maxZoom: 4 });
+          } catch (e) { /* keep default view */ }
+        })
+        .catch(function () { /* leave base map if data fails to load */ });
+    })();
+  </script>
   <!------------------ END JS SCRIPTS--------------------->
 </body>
 
