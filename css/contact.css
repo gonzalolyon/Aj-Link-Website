@@ -87,6 +87,26 @@ select,
   background-color: #ff4c4c;
 }
 
+.form-alert {
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 1rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.form-alert--success {
+  background: #e8f5e0;
+  border: 1px solid #7cb342;
+  color: #33691e;
+}
+
+.form-alert--error {
+  background: #fdecea;
+  border: 1px solid #e57373;
+  color: #b71c1c;
+}
+
 /*----------------- ASIDE ---------------------*/
 
 /*----------------- Table Contacts---------------------*/

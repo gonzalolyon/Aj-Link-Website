@@ -7,8 +7,8 @@
 
   <title>Contact - AJ Link Hotel Suppliers</title>
 
-  <link rel="alternate" hreflang="es" href="http://www.ajlink.com/contact.html" />
-  <link rel="alternate" hreflang="x-default" href="http://www.ajlink.com/contactos.html" />
+  <link rel="alternate" hreflang="es" href="http://www.ajlink.com/contactos.html" />
+  <link rel="alternate" hreflang="x-default" href="http://www.ajlink.com/contact.html" />
 
   <meta name="description" content="Thank you for getting to know a little bit about us by visiting our website. But as we said earlier, we like to get to know our Clients face-to-face and develop a sincere relationship.">
   <meta name="keywords" content="hotel supplies, supplies, restaurant, hotel suppliers, hotel supplier,  restaurant supplies, restaurant supplier, miami, latin america, chile, venezuela, peru, panama, clients, link, equipment">
@@ -41,7 +41,7 @@
 
         <div id="mobile-toggle" class="navbutton-menu"></div>
         <ul id="main-menu">
-          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="products.html">Products</a>
             <!------------ sub menu -------->
@@ -58,7 +58,7 @@
 
           </li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contacts</a></li>
+          <li class="active"><a href="contact.html">Contacts</a></li>
 
           <li><a href="#"><span class="icon-world-thin"></span></a>
 
@@ -92,9 +92,9 @@
 
       <p>Thank you for getting to know a little bit about us by visiting our website. But as we said earlier, we like to get to know our Clients face-to-face and develop a sincere relationship. Give us a call today, or submit your inquiry below, so we can personally link you to all the highest quality hotel and restaurant supplies you demand.</p>
 
-      <div class="contact-container">
+      <div id="contactos" class="contact-container">
         <div class="container-form">
-          <form class="form-contact" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <form class="form-contact" name="contact" method="POST" action="/contact.html?success=1" data-netlify="true" data-netlify-honeypot="bot-field">
             <h3 class="h3-form">Contact Form</h3>
             <input type="hidden" name="form-name" value="contact">
             <p hidden>
@@ -116,7 +116,7 @@
     <option value="Andorra">Andorra</option>
     <option value="Angola">Angola</option>
     <option value="Anguilla">Anguilla</option>
-    <option value="Antartica">Antarctica</option>
+    <option value="Antarctica">Antarctica</option>
     <option value="Antigua and Barbuda">Antigua and Barbuda</option>
     <option value="Argentina">Argentina</option>
     <option value="Armenia">Armenia</option>
@@ -305,7 +305,7 @@
     <option value="Somalia">Somalia</option>
     <option value="South Africa">South Africa</option>
     <option value="South Georgia">South Georgia and the South Sandwich Islands</option>
-    <option value="Span">Spain</option>
+    <option value="Spain">Spain</option>
     <option value="SriLanka">Sri Lanka</option>
     <option value="St. Helena">St. Helena</option>
     <option value="St. Pierre and Miguelon">St. Pierre and Miquelon</option>
@@ -439,9 +439,9 @@
             <div class="column1 f-flex-item">
               <h3>AJ Link Inc</h3>
               <ul>
-                <li><a href="#"><span class="icon-person-thin"></span>Alejandro Pollier (President)</a></li>
-                <li><a href="#"><span class="icon-phone-thin"></span>Telefone: 1-305-461-0283</a></li>
-                <li><a href="#"><span class="icon-printer-thin"></span>Fax: 1-305-665-0175</a></li>
+                <li><a href="about.html"><span class="icon-person-thin"></span>Alejandro Pollier (President)</a></li>
+                <li><a href="tel:+13054610283"><span class="icon-phone-thin"></span>Telephone: 1-305-461-0283</a></li>
+                <li><a href="tel:+13056650175"><span class="icon-printer-thin"></span>Fax: 1-305-665-0175</a></li>
                 <li><a href="mailto:alejandro@ajlink.com"><span class="icon-mail-thin ico-mail"></span>Email: alejandro@ajlink.com</a></li>
 
                 <li>
@@ -503,7 +503,7 @@
                 <li><a href="#">
                     <span class="icon-twins-thin"></span>Work With Us</a></li>
                 <li><a href="home-espanol.html">
-                    <span class="icon-world-hand-thin"></span>Lenguaje Español</a></li>
+                    <span class="icon-world-hand-thin"></span>Español</a></li>
 
               </ul>
             </div>
@@ -568,6 +568,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="javascript/sticky-nav.js"></script>
   <script src="javascript/nav.js"></script>
+  <script src="javascript/form-feedback.js"></script>
   <!------------------ END JS SCRIPTS--------------------->
 </body>
 
