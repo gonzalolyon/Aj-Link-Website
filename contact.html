@@ -7,11 +7,23 @@
 
   <title>Contact - AJ Link Hotel Suppliers</title>
 
-  <link rel="alternate" hreflang="es" href="http://www.ajlink.com/contactos.html" />
-  <link rel="alternate" hreflang="x-default" href="http://www.ajlink.com/contact.html" />
+  <link rel="alternate" hreflang="es" href="https://www.ajlink.com/contactos.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.ajlink.com/contact.html" />
 
   <meta name="description" content="Thank you for getting to know a little bit about us by visiting our website. But as we said earlier, we like to get to know our Clients face-to-face and develop a sincere relationship.">
   <meta name="keywords" content="hotel supplies, supplies, restaurant, hotel suppliers, hotel supplier,  restaurant supplies, restaurant supplier, miami, latin america, chile, venezuela, peru, panama, clients, link, equipment">
+  <link rel="canonical" href="https://www.ajlink.com/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AJ Link">
+  <meta property="og:title" content="Contact - AJ Link Hotel Suppliers">
+  <meta property="og:description" content="Thank you for getting to know a little bit about us by visiting our website. But as we said earlier, we like to get to know our Clients face-to-face and develop a sincere relationship.">
+  <meta property="og:url" content="https://www.ajlink.com/contact.html">
+  <meta property="og:image" content="https://www.ajlink.com/img/aj-link-hero-image-y.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact - AJ Link Hotel Suppliers">
+  <meta name="twitter:description" content="Thank you for getting to know a little bit about us by visiting our website. But as we said earlier, we like to get to know our Clients face-to-face and develop a sincere relationship.">
+  <meta name="twitter:image" content="https://www.ajlink.com/img/aj-link-hero-image-y.jpg">
 
   <link rel="shortcut icon" href="/img/favicon-aj-link.png" type="image/png">
   <link type="text/css" href="css/normalize.css" rel="stylesheet">
@@ -94,11 +106,15 @@
 
       <div id="contactos" class="contact-container">
         <div class="container-form">
-          <form class="form-contact" name="contact" method="POST" action="/contact.html?success=1" data-netlify="true" data-netlify-honeypot="bot-field">
+          <form class="form-contact" name="contact" method="POST" action="mail.php" data-netlify="true" data-netlify-honeypot="bot-field" data-success-url="/contact.html?success=1#contactos">
             <h3 class="h3-form">Contact Form</h3>
             <input type="hidden" name="form-name" value="contact">
+            <input type="hidden" name="return_to" value="contact">
             <p hidden>
               <label>Don't fill this out if you're human: <input name="bot-field"></label>
+            </p>
+            <p hidden aria-hidden="true">
+              <label>Leave blank: <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
             </p>
             <label for="name">Name</label>
             <input type="input" id="name" name="name" placeholder="Your name..">
@@ -544,7 +560,7 @@
                 </div>
                 <div><a href="https://webmail.hostway.com/appsuite/ui" target="_blank" rel="noopener noreferrer">AJ Link User</a></div>
                 <hr class="line-break">
-                <div><a href="about.html">Website Site Map</a></div>
+                <div><a href="sitemap.xml">Sitemap</a></div>
               </div>
             </div>
           </div>
@@ -565,9 +581,9 @@
 
   </div>
   <!------------------ JS SCRIPTS--------------------->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="javascript/sticky-nav.js"></script>
   <script src="javascript/nav.js"></script>
+  <script src="javascript/contact-form.js"></script>
   <script src="javascript/form-feedback.js"></script>
   <!------------------ END JS SCRIPTS--------------------->
 </body>

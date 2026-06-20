@@ -7,6 +7,18 @@
   <title>Contactos - AJ Link Suplidores Hoteleros</title>
   <meta name="description" content="Muchas gracias por conocer un poco más sobre nosotros al visitar nuestra página Web. Siin embargo, como ya hemos mencionado, preferimos conocer a nuestros Clientes personalmente para así desarrollar una mejor y más duradera relación.">
   <meta name="keywords" content="hotel supplies, supplies, restaurant, hotel suppliers, hotel supplier,  restaurant supplies, restaurant supplier, miami, latin america, chile, venezuela, peru, panama, clients, link, equipment">
+  <link rel="canonical" href="https://www.ajlink.com/contactos.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AJ Link">
+  <meta property="og:title" content="Contactos - AJ Link Suplidores Hoteleros">
+  <meta property="og:description" content="Muchas gracias por conocer un poco más sobre nosotros al visitar nuestra página Web. Siin embargo, como ya hemos mencionado, preferimos conocer a nuestros Clientes personalmente para así desarrollar una mejor y más duradera relación.">
+  <meta property="og:url" content="https://www.ajlink.com/contactos.html">
+  <meta property="og:image" content="https://www.ajlink.com/img/aj-link-hero-image-y.jpg">
+  <meta property="og:locale" content="es_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contactos - AJ Link Suplidores Hoteleros">
+  <meta name="twitter:description" content="Muchas gracias por conocer un poco más sobre nosotros al visitar nuestra página Web. Siin embargo, como ya hemos mencionado, preferimos conocer a nuestros Clientes personalmente para así desarrollar una mejor y más duradera relación.">
+  <meta name="twitter:image" content="https://www.ajlink.com/img/aj-link-hero-image-y.jpg">
 
   <link rel="shortcut icon" href="/img/favicon-aj-link.png" type="image/png">
   <link type="text/css" href="css/normalize.css" rel="stylesheet">
@@ -69,11 +81,15 @@
       <p>Muchas gracias por conocer un poco más sobre nosotros al visitar nuestra página Web. Siin embargo, como ya hemos mencionado, preferimos conocer a nuestros Clientes personalmente para así desarrollar una mejor y más duradera relación. Llámenos hoy o indique su solicitud más abajo, para así poder conectarle con los productos para hoteles y restaurantes de la más alta calidad que usted requiere.</p>
       <div id="contactos" class="contact-container">
         <div class="container-form">
-          <form class="form-contact" name="contacto" method="POST" action="/contactos.html?success=1" data-netlify="true" data-netlify-honeypot="bot-field">
+          <form class="form-contact" name="contacto" method="POST" action="mail.php" data-netlify="true" data-netlify-honeypot="bot-field" data-success-url="/contactos.html?success=1#contactos">
             <h3 class="h3-form">Formulario de Contacto</h3>
             <input type="hidden" name="form-name" value="contacto">
+            <input type="hidden" name="return_to" value="contactos">
             <p hidden>
               <label>No llenar si eres humano: <input name="bot-field"></label>
+            </p>
+            <p hidden aria-hidden="true">
+              <label>Dejar en blanco: <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
             </p>
             <label for="name">Nombre</label>
             <input type="input" id="name" name="name" placeholder="Su nombre..">
@@ -480,7 +496,7 @@
                 </div>
                 <div><a href="https://webmail.hostway.com/appsuite/ui" target="_blank" rel="noopener noreferrer">AJ Link Usuario</a></div>
                 <hr class="line-break">
-                <div><a href="#">Mapa Sitio Web</a></div>
+                <div><a href="sitemap.xml">Mapa del sitio</a></div>
               </div>
             </div>
           </div>
@@ -500,9 +516,9 @@
 
   </div>
   <!------------------ JS SCRIPTS--------------------->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="javascript/sticky-nav.js"></script>
   <script src="javascript/nav.js"></script>
+  <script src="javascript/contact-form.js"></script>
   <script src="javascript/form-feedback.js"></script>
   <!------------------ END JS SCRIPTS--------------------->
 </body>

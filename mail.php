@@ -1,7 +1,7 @@
 <?php
 /**
- * Fallback contact form handler for PHP hosting.
- * Primary forms use Netlify (contact.html / contactos.html).
+ * Contact form handler for Hostway (PHP mail).
+ * On Netlify (*.netlify.app), forms use Netlify Forms via data-netlify instead.
  */
 
 $to      = 'alejandro@ajlink.com';
