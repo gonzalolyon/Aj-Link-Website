@@ -1,23 +1,33 @@
-$(document).ready(function () {
-  // grab the initial top offset of the navigation 
-  var stickyNavTop = $('.main-nav').offset().top;
+(function () {
+  'use strict';
 
-  // our function that decides weather the navigation bar should have "fixed" css position or not.
-  var stickyNav = function () {
-    var scrollTop = $(window).scrollTop(); // our current vertical position from the top
-
-    // if we've scrolled more than the navigation, change its position to fixed to stick to top,
-    // otherwise change it back to relative
-    if (scrollTop > stickyNavTop) {
-      $('.main-nav').addClass('sticky');
+  function ready(fn) {
+    if (document.readyState !== 'loading') {
+      fn();
     } else {
-      $('.main-nav').removeClass('sticky');
+      document.addEventListener('DOMContentLoaded', fn);
     }
-  };
+  }
 
-  stickyNav();
-  // and run it again every time you scroll
-  $(window).scroll(function () {
-    stickyNav();
+  ready(function () {
+    var nav = document.querySelector('.main-nav');
+    if (!nav) return;
+
+    var stickyNavTop = nav.offsetTop;
+
+    function updateStickyNav() {
+      if (window.scrollY > stickyNavTop) {
+        nav.classList.add('sticky');
+      } else {
+        nav.classList.remove('sticky');
+      }
+    }
+
+    updateStickyNav();
+    window.addEventListener('scroll', updateStickyNav, { passive: true });
+    window.addEventListener('resize', function () {
+      stickyNavTop = nav.offsetTop;
+      updateStickyNav();
+    });
   });
-});
+})();
