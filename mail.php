@@ -37,7 +37,6 @@ function clean_header($value) {
 
 $name    = isset($_POST['name'])    ? trim($_POST['name'])    : '';
 $email   = isset($_POST['email'])   ? trim($_POST['email'])   : '';
-$country = isset($_POST['country']) ? trim($_POST['country']) : '';
 $message = isset($_POST['message']) ? trim($_POST['message']) : '';
 
 $error_code = '';
@@ -59,8 +58,7 @@ $safe_email = clean_header($email);
 
 $body  = "New message from ajlink.com contact form\n\n";
 $body .= "Name: $name\n";
-$body .= "E-mail: $safe_email\n";
-$body .= "Country: $country\n\n";
+$body .= "E-mail: $safe_email\n\n";
 $body .= "Message:\n$message\n";
 
 $headers  = "From: AJ Link Web <alejandro@ajlink.com>\r\n";
